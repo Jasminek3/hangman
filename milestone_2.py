@@ -1,3 +1,3 @@
 
 word_list = ['Mango','Banana','Apple','Kiwi','Strawberry']
-word_list
+print(word_list)
