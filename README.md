@@ -24,3 +24,34 @@ In this milestone i first has to connect the github repo to my local machine so 
 One of the first tasks was to create a list containing the name of 5 fruits. I assigned this list to 'word_list'. I then went ahead and printed it to check that it was working correctly, this output the fruits on the screen. In the next task i had to import a new module called random. This random module generates random word from the given list, which in this case is 'word_list'. This is perfect hangman because we will need this to generate a random word when someone is playing it. In the next next i had to create a random.choice and pass the word_list to it and assigned this to a variable called 'word'. This line of code allows anything in the list 'word_choice' to be generated at random. i then followed this with a print(word) to make sure this works correctly. I then run this code a few times and saw the output was a random word from the list, with no pattern to it, which is correct for hangman. 
 
 The next task was to create and valildate the input. Firstly i got the input and assinged it to a varibale called 'guess'. Then i used a if statement to check the valiation of the input and only if the input is correct, then it will run the random module to generate a randon word from the list. I used build in methods from python to check the input is an alphabect and only 1 character long. If this is true, then it will generate and print a random word, or it will print "Oops! That is not a valid input.". 
+
+MILESTONE 3
+
+import random 
+
+word_list = ['mango','banana','apple','kiwi','strawberry']
+word = random.choice(word_list)
+print(word)
+
+def check_guess(guess):
+    guess = guess.lower()
+
+    if guess in word:
+        print(f'Good guess! {guess} is in the word')
+    else:
+        print(f'Sorry, {guess} is not in the word. Try again')
+
+def ask_for_input():   
+    while True:
+        guess = input('Guess a Letter')
+        if guess.isalpha()==True and len(guess) == 1:
+            break
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
+
+    check_guess(guess)
+
+ask_for_input() 
+
+In this milestone, I made two functions from which one will ask for the input and validate it, and the other would take the input and check if its in the word and display a message accordingly. In the first function which is called Check_guess, this will first of all take the guess, and convert it to lowercase, Then it will check if this letter is in the randomly generated word and if it is, it will say 'Good guess! {guess} is in the word', otherwise it will say Sorry, {guess} is not in the word. Try again. The second function will run while true, which means it will run continuously. Then it will check the letter given is an alphabect and the length is euqal to one. If those are true, at this stage, the loop will break and if its not, it will display 
+'Invalid letter. Please, enter a single alphabetical character'. Functions do not run unless they are called, therefore i then called both of the functions. 
