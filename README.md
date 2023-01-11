@@ -55,3 +55,51 @@ ask_for_input()
 
 In this milestone, I made two functions from which one will ask for the input and validate it, and the other would take the input and check if its in the word and display a message accordingly. In the first function which is called Check_guess. I have passed the varibale guess to this functions so that this funciton will take the value of guess and use it in the function. Then it will take the guess, and convert it to lowercase, Then it will check if this letter is in the randomly generated word and if it is, it will say 'Good guess! {guess} is in the word', otherwise it will say Sorry, {guess} is not in the word. Try again. The second function will run while true, which means it will run continuously. Then it will check the letter given is an alphabect and the length is euqal to one. If those are true, at this stage, the loop will break and if its not, it will display 
 'Invalid letter. Please, enter a single alphabetical character'. Functions do not run unless they are called, therefore i then called both of the functions. 
+
+
+MILESTONE 4 
+
+import random 
+word_list = ['mango','banana','apple','kiwi','strawberry']
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for letter in self.word]
+        self.num_lives = num_lives
+        self.list_of_guesses = []
+        self.num_letters = len(set(list(self.word)))
+
+        print(f"Unique guesses left: {self.num_letter}")
+
+    def check_guess(self, guess):
+        guess = guess.lower
+        if guess in self.word:
+            print(f'Good guess! {guess} is in the word')
+            for index, char in enumerate(self.word):
+                if char == guess:
+                    self.word_guessed[index] = char
+            print(self.word_guessed) 
+            self.num_letters -= 1
+        else:
+            self.num_letters -= 1
+            print(f'Sorry, {guess} is not in the word.')
+            print(f'You have {self.num_lives} lives left.')
+        self.list_of_guesses.append(guess)
+
+    def ask_for_input(self):
+        guess = input('Guess a Letter')
+        while True:
+            if guess.isalpha()!=True and len(guess) !=1:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+
+The code for this milestone is above. In this milestone we implemented OOP. This means using classes for hangman. First I made an initalise class in which i have define all the attributes. 
+
+Firstly i created a method whcih check check that the guess was in the word that was randomly chosen. In order to do this successfully, I firsty converted the letter entered to a lower case to make the running of the code smoother. Then i check if the letter guessed (guess) is in the self.word, which is the word that has been chosen. If the letter is in the code, then it will reduce the number of guesses left (default is 5) by one and display a message saying good guess. If the letter is not in the word, then it will again, reduce the guesses left and display that this letter is not in the word, and show a number of guesses left. Then finally for this method, the last line of code, which is outside the loop to make sure it applies to either of the outputs, adds the letter to the list which we have create in attributes above. 
+
+Another method that i made was to get the input and validate it. If the input was not an alphabect && not equals to one character then it will display an error message saying "Invalid letter. Please, enter a single alphabetical character.". Then it will check if the guess is in the list of guesses that have already been made. This is to make sure that the player does not enter the same letter more than once. If it has been entered before, it will display a message saying you have already tried that letter. If the letter is an alphabect and one character, and it has not already been used before, then it will run the check guess method. 
