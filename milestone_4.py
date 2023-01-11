@@ -10,3 +10,5 @@ class Hangman():
         self.num_lives = num_lives
         self.list_of_guesses = print(letter_list)
         self.num_letter = 26-(len(letter_list))
+
+        print(f"Unique guesses left: {self.num_letter}")
