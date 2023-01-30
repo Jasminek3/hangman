@@ -39,19 +39,18 @@ class Hangman:
                 self.check_guess(guess)
                 break
 
-    def play_game(word_list):
-        game = Hangman(word_list, num_lives=5)
-        while True:
-            if game.num_lives==0:
-                print("You lost!")
-                break
-            elif game.num_letters>0:
-                game.ask_for_input()
-            else:
-                print("Congratulations. You won the game!")
-                break
+def play_game(word_list):
+    game = Hangman(word_list, num_lives=5)
+    while True:
+        if game.num_lives==0:
+            print("You lost!")
+            break
+        elif game.num_letters>0:
+            game.ask_for_input()
+        else:
+            print("Congratulations. You won the game!")
+            break
 
-play = Hangman
-play.play_game(word_list)
+play_game(word_list)
                 
 # %%

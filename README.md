@@ -109,3 +109,24 @@ The code for this milestone is above. In this milestone we implemented OOP. This
 Firstly i created a method whcih check check that the guess was in the word that was randomly chosen. In order to do this successfully, I firsty converted the letter entered to a lower case to make the running of the code smoother. Then i check if the letter guessed (guess) is in the self.word, which is the word that has been chosen. If the letter is in the code, then it will reduce the number of guesses left (default is 5) by one and display a message saying good guess. If the letter is not in the word, then it will again, reduce the guesses left and display that this letter is not in the word, and show a number of guesses left. Then finally for this method, the last line of code, which is outside the loop to make sure it applies to either of the outputs, adds the letter to the list which we have create in attributes above. 
 
 Another method that i made was to get the input and validate it. If the input was not an alphabect && not equals to one character then it will display an error message saying "Invalid letter. Please, enter a single alphabetical character.". Then it will check if the guess is in the list of guesses that have already been made. This is to make sure that the player does not enter the same letter more than once. If it has been entered before, it will display a message saying you have already tried that letter. If the letter is an alphabect and one character, and it has not already been used before, then it will run the check guess method. 
+
+
+MILESTONE 5 
+
+def play_game(word_list):
+        game = Hangman(word_list, num_lives=5)
+        while True:
+            if game.num_lives==0:
+                print("You lost!")
+                break
+            elif game.num_letters>0:
+                game.ask_for_input()
+            else:
+                print("Congratulations. You won the game!")
+                break
+
+play = Hangman
+play.play_game(word_list)
+
+
+This is the code that i have added in milestone 5. 
