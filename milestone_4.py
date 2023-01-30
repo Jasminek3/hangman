@@ -28,7 +28,7 @@ class Hangman:
                 print("You already tried that letter!")
             else:
                 self.check_guess(guess) 
-            break
+                break
         
 myInstance = Hangman(word_list)
 print(myInstance.word)
