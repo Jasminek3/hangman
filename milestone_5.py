@@ -5,7 +5,7 @@ word_list = ['mango','banana','apple','kiwi','strawberry']
 
 class Hangman:
 
-    def __init__(self, word_list, num_lives = 5):
+    def __init__(self, word_list, num_lives=5):
         self.word_list = word_list
         self.word = random.choice(word_list)
         self.word_guessed = ['_'] * len(self.word)
@@ -38,10 +38,20 @@ class Hangman:
             else:
                 self.check_guess(guess)
                 break
-        
-myInstance = Hangman(word_list)
-print(myInstance.word)
-print(len(myInstance.word_guessed))
-print(myInstance.num_lives)
-myInstance.ask_for_input()
+
+    def play_game(word_list):
+        game = Hangman(word_list, num_lives=5)
+        while True:
+            if game.num_lives==0:
+                print("You lost!")
+                break
+            elif game.num_letters>0:
+                game.ask_for_input()
+            else:
+                print("Congratulations. You won the game!")
+                break
+
+play = Hangman
+play.play_game(word_list)
+                
 # %%
