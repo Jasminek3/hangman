@@ -7,7 +7,7 @@ In milestone 1 I have connected my github to the Aicore portal in order to creat
 MILESTONE 2
 import random 
 
-word_list = ['Mango','Banana','Apple','Kiwi','Strawberry']
+"""word_list = ['Mango','Banana','Apple','Kiwi','Strawberry']
 
 guess = input("Guess a Letter")
 
@@ -15,7 +15,7 @@ if guess.isalpha() & len(guess) == 1:
     word = random.choice(word_list)
     print(word)
 else:
-    print("Oops! That is not a valid input.")
+    print("Oops! That is not a valid input.")"""
     
 Above is the code i have used for completing this milestone. 
     
@@ -27,7 +27,7 @@ The next task was to create and valildate the input. Firstly i got the input and
 
 MILESTONE 3
 
-import random 
+"""import random 
 
 word_list = ['mango','banana','apple','kiwi','strawberry']
 word = random.choice(word_list)
@@ -51,7 +51,7 @@ def ask_for_input():
 
     check_guess(guess)
 
-ask_for_input() 
+ask_for_input() """
 
 In this milestone, I made two functions from which one will ask for the input and validate it, and the other would take the input and check if its in the word and display a message accordingly. In the first function which is called Check_guess. I have passed the varibale guess to this functions so that this funciton will take the value of guess and use it in the function. Then it will take the guess, and convert it to lowercase, Then it will check if this letter is in the randomly generated word and if it is, it will say 'Good guess! {guess} is in the word', otherwise it will say Sorry, {guess} is not in the word. Try again. The second function will run while true, which means it will run continuously. Then it will check the letter given is an alphabect and the length is euqal to one. If those are true, at this stage, the loop will break and if its not, it will display 
 'Invalid letter. Please, enter a single alphabetical character'. Functions do not run unless they are called, therefore i then called both of the functions. 
@@ -59,7 +59,7 @@ In this milestone, I made two functions from which one will ask for the input an
 
 MILESTONE 4 
 
-import random 
+"""import random 
 word_list = ['mango','banana','apple','kiwi','strawberry']
 
 class Hangman:
@@ -102,7 +102,7 @@ myInstance = Hangman(word_list)
 print(myInstance.word)
 print(len(myInstance.word_guessed))
 print(myInstance.num_lives)
-myInstance.ask_for_input()
+myInstance.ask_for_input()"""
 
 The code for this milestone is above. In this milestone we implemented OOP. This means using classes for hangman. First I made an initalise class in which i have define all the attributes. 
 
@@ -113,7 +113,7 @@ Another method that i made was to get the input and validate it. If the input wa
 
 MILESTONE 5 
 
-def play_game(word_list):
+"""def play_game(word_list):
         game = Hangman(word_list, num_lives=5)
         while True:
             if game.num_lives==0:
@@ -126,7 +126,7 @@ def play_game(word_list):
                 break
 
 play = Hangman
-play.play_game(word_list)
+play.play_game(word_list)"""
 
 
 This is the code that i have added in milestone 5. This code is taking the word_list into consideraation. It check if the number of lives left are 0, if they are it means the player has lost the game as they have already used all 5 of their guesses. If it's not zero, then it will check if the word has been completed. It will do this by comparing if the length of the word matches the guess and if it does, it means that the player has won the game. Finally if neither of these are true, it will run the function ask.for.input. This is all in a while look (continueus loop) until either they have lost or won. 
