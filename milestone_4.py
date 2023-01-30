@@ -17,8 +17,12 @@ class Hangman:
         guess = guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-            
-    
+            for index, char in enumerate(self.word):
+                if char == guess:
+                    self.word_guessed[index] = guess
+            print(self.word_guessed) 
+            self.num_letters-=1    
+        
     def ask_for_input(self):
         while True:
             guess = input('Guess a letter')
