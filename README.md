@@ -129,4 +129,4 @@ play = Hangman
 play.play_game(word_list)
 
 
-This is the code that i have added in milestone 5. 
+This is the code that i have added in milestone 5. This code is taking the word_list into consideraation. It check if the number of lives left are 0, if they are it means the player has lost the game as they have already used all 5 of their guesses. If it's not zero, then it will check if the word has been completed. It will do this by comparing if the length of the word matches the guess and if it does, it means that the player has won the game. Finally if neither of these are true, it will run the function ask.for.input. This is all in a while look (continueus loop) until either they have lost or won. 
