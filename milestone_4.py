@@ -21,7 +21,6 @@ class Hangman:
                 if char == guess:
                     self.word_guessed[index] = guess
             print(self.word_guessed) 
-            self.num_lives -= 1
         else:
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word.")
